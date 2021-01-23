@@ -1,16 +1,7 @@
-const mysql = require("mysql");
+// LOAD mysql
+var mysql = require("mysql");
 
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-const PORT = process.env.PORT || 8080;
-
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
+// mysql database connection object
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
@@ -19,13 +10,13 @@ var connection = mysql.createConnection({
   database: "burgers_db"
 });
 
-connection.connect(function(err) {
+connection.connect((err) => {
   if (err) {
-    console.error("error connecting: " + err.stack);
+    console.error("Error connecting: " + err.stack);
     return;
   }
 
-  console.log("connected as id " + connection.threadId);
+  console.log("Connected as id " + connection.threadId);
 });
 
 module.exports = connection;

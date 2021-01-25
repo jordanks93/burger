@@ -11,7 +11,7 @@ var app = express();
 app.use(express.static("public"));
 
 // Parse request body as JSON
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Allows Override of POST method in index.handlebars 

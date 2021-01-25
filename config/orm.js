@@ -39,7 +39,7 @@ var orm = {
 		connection.query(queryString, function (err, result) {
 				if (err) {
 					throw err;
-				} else
+				}
 				cb(result);
 			});
 	},
@@ -60,7 +60,7 @@ var orm = {
 		connection.query(queryString, vals, function (err, result) {
 				if (err) {
 					throw err;
-				} else
+				}
 				cb(result);
 			});
 	},
@@ -79,7 +79,7 @@ var orm = {
 		connection.query(queryString, function (err, result) {
 				if (err) {
 					throw err;
-				} else
+				}
 				cb(result);
 			});
 	}

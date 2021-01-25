@@ -10,14 +10,6 @@ var app = express();
 // Serve static content for the app from the "public" directory in the application directory
 app.use(express.static("public"));
 
-// Timeout
-app.use(timeout(15000));
-app.use(haltOnTimedout);
-
-function haltOnTimedout(req, res, next) {
-    if (!req.timedout) next();
-}
-
 // Parse request body as JSON
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

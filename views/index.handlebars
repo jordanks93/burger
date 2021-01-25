@@ -1,3 +1,44 @@
 {{!-- // Setup the `index.handlebars` to have the template that Handlebars can render onto. --}}
-
 {{!-- Create a button in `index.handlebars` that will submit the user input into the database. --}}
+<main>
+
+  <div class="container">
+
+    <div class="row">
+
+        <div class="col-12">
+          <form class= "addBurger" action="/api/burgers" method="POST">
+            <input type="text" id="name" name="burger_name" placeholder="Enter Burger Name">
+            <br><br>
+            <button type="submit" class="addBurgerBtn">Add A Fresh Burger</button>
+          </form>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="row">
+
+      <div class="col-6">
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <form method="POST" action="/api/burgers/{{this.id}}?_method=PUT">
+          <button type="submit" class="freshBurger"> {{this.burger_name}}</button>
+        </form>
+        {{/unless}}
+        {{/each}}
+      </div>
+
+      <div class="col-6">
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <div class="devouredBurger">{{this.burger_name}}</div>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+
+  </div>
+  
+</main>

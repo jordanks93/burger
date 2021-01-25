@@ -1,1 +1,31 @@
 {{!-- // Setup the `main.handlebars` file so it's able to be used by Handlebars. --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!--Google fonts-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+	<!--CSS-->
+	<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+
+	<title>Eat Da Burger</title>
+	
+</head>
+
+	<h1>Eat Da Burger</h1>
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<img src="burger.jpg" class= "img-fluid rounded mx-auto d-block border border-dark" width="800px" alt="Baconator" id="Baconator">
+			<br>
+			<p class="jumboText">The Baconator.</p>
+		</div>
+	</div>
+
+	{{{ body }}}
+
+</html>

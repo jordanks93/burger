@@ -22,7 +22,7 @@ connection.connect((err) => {
     return;
   }
 
-  console.log("Connected as id " + connection.threadId);
+  console.log(`Connected as id ${connection.threadId}`);
 });
 
 module.exports = connection;

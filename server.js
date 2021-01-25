@@ -26,8 +26,8 @@ app.set("view engine", "handlebars");
 app.use(express.static('public/assets/img'));
 
 // Import routes and give the server access
-var routes = require("../controllers/burgers_controller.js");
-app.use('/' + routes);
+var routes = require('./controllers/burgers_controller.js');
+app.use(routes);
 
 app.listen(PORT, function () {
   console.log("App now listening at localhost:" + PORT);

@@ -1,5 +1,5 @@
 // Import connection to mysql server
-var connection = require ('./connection.js');
+var connection = require ('../config/connection.js');
 
 // Helper functions for passing values into mysql query
 // creates an array of question marks depending on how many value you need to pass

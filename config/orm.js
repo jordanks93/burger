@@ -1,5 +1,5 @@
 // Import connection to mysql server
-var connection = require ('../config/connection.js');
+var connection = require ('./connection.js');
 
 // Helper functions for passing values into mysql query
 // creates an array of question marks depending on how many value you need to pass
@@ -36,12 +36,12 @@ var orm = {
 	// Returns all table entries
 	selectAll: function(tableInput, cb) {
 		var queryString = "SELECT * FROM " + tableInput + ";";
-		connection.query(queryString, (err, result) => {
-			if (err) {
-				throw err;
-			}
-			cb(result);
-		});
+		connection.query(queryString, function (err, result) {
+				if (err) {
+					throw err;
+				}
+				cb(result);
+			});
 	},
 
 	// Adds a single table entry
@@ -57,12 +57,12 @@ var orm = {
 
 		console.log(queryString);
 
-		connection.query(queryString, vals, (err, result) => {
-			if (err) {
-				throw err;
-			}
-			cb(result);
-		});
+		connection.query(queryString, vals, function (err, result) {
+				if (err) {
+					throw err;
+				}
+				cb(result);
+			});
 	},
 
 	// Updates a single table entry
@@ -76,12 +76,12 @@ var orm = {
 
 		console.log(queryString);
 
-		connection.query(queryString, (err, result) => {
-			if (err) {
-				throw err;
-			}
-			cb(result);
-		});
+		connection.query(queryString, function (err, result) {
+				if (err) {
+					throw err;
+				}
+				cb(result);
+			});
 	}
 };
 

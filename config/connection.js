@@ -4,7 +4,7 @@ var connection;
 
 if (process.env.JAWSDB_URL) {
   // heroku connection object
-  connection = mysql.createConnection(process.env.JAWSBD_URL);
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   // mysql database connection object
   connection = mysql.createConnection({

@@ -20,7 +20,7 @@ function objToSql(ob) {
     var value = ob[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations
+      // if string has spaces, add quotations
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
@@ -55,7 +55,7 @@ var orm = {
 		queryString += printQuestionMarks(vals.length);
 		queryString += ") ";
 
-		console.log(queryString);
+		//console.log(queryString);
 
 		connection.query(queryString, vals, (err, result) => {
 				if (err) {
@@ -70,11 +70,11 @@ var orm = {
 		var queryString = "UPDATE " + table;
 
 		queryString += " SET ";
-		queryString += objToSql(objColVals);
+		console.log(objToSql(objColVals));
 		queryString += " WHERE ";
 		queryString += condition;
 
-		console.log(queryString);
+		//console.log(queryString);
 
 		connection.query(queryString, (err, result) => {
 				if (err) {

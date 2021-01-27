@@ -70,7 +70,7 @@ var orm = {
 		var queryString = "UPDATE " + table;
 
 		queryString += " SET ";
-		console.log(objToSql(objColVals));
+		queryString += objToSql(objColVals);
 		queryString += " WHERE ";
 		queryString += condition;
 
